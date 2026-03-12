@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
-import { LayoutDashboard, Users, Tractor, ShoppingCart, Archive, PieChart, LogOut, Wallet, Menu, X } from 'lucide-react';
+import { LayoutDashboard, Users, Tractor, ShoppingCart, Archive, PieChart, LogOut, Wallet, Menu, X, Settings } from 'lucide-react';
 
 const Layout = ({ children }) => {
   const navigate = useNavigate();
@@ -31,6 +31,7 @@ const Layout = ({ children }) => {
     { to: '/stock', icon: Archive, label: 'Stock' },
     { to: '/pocket', icon: Wallet, label: 'Daily Pocket' },
     { to: '/reports', icon: PieChart, label: 'Reports' },
+    { to: '/settings', icon: Settings, label: 'Settings' },
   ];
 
   return (
@@ -145,8 +146,11 @@ const Layout = ({ children }) => {
           </div>
 
           <div className="flex items-center gap-4">
-            <div className="flex items-center gap-3 py-1.5 px-3 rounded-xl hover:bg-gray-50 transition-colors cursor-default">
-              <div className="h-8 w-8 rounded-full bg-primary-100 flex items-center justify-center text-primary-700 font-bold border border-primary-200">
+            <div 
+              onClick={() => navigate('/settings')}
+              className="flex items-center gap-3 py-1.5 px-3 rounded-xl hover:bg-gray-50 transition-colors cursor-pointer group"
+            >
+              <div className="h-8 w-8 rounded-full bg-primary-100 flex items-center justify-center text-primary-700 font-bold border border-primary-200 group-hover:bg-primary-200 transition-colors">
                 A
               </div>
               <div className="hidden sm:block text-left">

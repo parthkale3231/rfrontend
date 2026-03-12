@@ -13,6 +13,7 @@ import Sales from './pages/Sales';
 import Stock from './pages/Stock';
 import Reports from './pages/Reports';
 import DailyPocket from './pages/DailyPocket';
+import Settings from './pages/Settings';
 import { Toaster } from 'react-hot-toast';
 
 const App = () => {
@@ -31,6 +32,7 @@ const App = () => {
         <Route path="/stock" element={<Layout><Stock /></Layout>} />
         <Route path="/reports" element={<Layout><Reports /></Layout>} />
         <Route path="/pocket" element={<Layout><DailyPocket /></Layout>} />
+        <Route path="/settings" element={<Layout><Settings /></Layout>} />
         
         <Route path="*" element={<Navigate to="/dashboard" replace />} />
       </Routes>

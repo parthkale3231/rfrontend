@@ -5,8 +5,8 @@ import api from '../api';
 import toast from 'react-hot-toast';
 
 const Login = () => {
-  const [username, setUsername] = useState('admin');
-  const [password, setPassword] = useState('password123');
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
@@ -48,7 +48,7 @@ const Login = () => {
         </p>
 
         <div className="mt-8 bg-white py-8 px-4 shadow-xl sm:rounded-2xl sm:px-10 border border-gray-100 relative overflow-hidden">
-          <form className="space-y-6" onSubmit={handleLogin}>
+          <form className="space-y-6" onSubmit={handleLogin} autoComplete="off">
             <div>
               <label className="block text-sm font-medium text-gray-700">Username</label>
               <div className="mt-1 relative rounded-md shadow-sm">
@@ -61,8 +61,9 @@ const Login = () => {
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                   className="input-field pl-10 focus:ring-primary-500 focus:border-primary-500 block w-full border-gray-300 rounded-lg sm:text-sm py-2.5"
-                  placeholder="admin"
+                  placeholder="Username"
                   disabled={loading}
+                  autoComplete="off"
                 />
               </div>
             </div>
@@ -81,6 +82,7 @@ const Login = () => {
                   className="input-field pl-10 focus:ring-primary-500 focus:border-primary-500 block w-full border-gray-300 rounded-lg sm:text-sm py-2.5"
                   placeholder="••••••••"
                   disabled={loading}
+                  autoComplete="new-password"
                 />
               </div>
             </div>
